@@ -31,6 +31,11 @@ export default function AdminDashboard() {
     }
   };
 
+    const handleLogout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  };
+
   useEffect(() => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
@@ -84,6 +89,9 @@ useEffect(() => {
 
       <div className="flex-grow-1 p-4 bg-light">
         <h2>Welcome, Admin 👋</h2>
+           <button className="btn btn-outline-danger" onClick={handleLogout}>
+          Logout
+        </button>
         <p className="text-muted">
           Use the menu to manage customers and loans.
         </p>

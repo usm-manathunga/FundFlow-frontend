@@ -5,12 +5,14 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function LoanApplicationPage() {
+    const userId : string = JSON.parse(localStorage.getItem("user") || "{}").id;
   const [form, setForm] = useState({
     loanAmount: "",
     durationMonths: "",
     purpose: "",
     monthlyIncome: "",
     existingLoans: "",
+    id:userId
   });
 
   const handleChange = (
@@ -21,6 +23,8 @@ export default function LoanApplicationPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    
 
     try {
       const response = await axios.post(
@@ -41,6 +45,7 @@ export default function LoanApplicationPage() {
         purpose: "",
         monthlyIncome: "",
         existingLoans: "",
+        id:""
       });
     } catch (error: any) {
       Swal.fire({
@@ -49,6 +54,11 @@ export default function LoanApplicationPage() {
         text: "Please check your inputs or try again.",
       });
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/";
   };
 
   return (
@@ -61,6 +71,9 @@ export default function LoanApplicationPage() {
         style={{ width: "100%", maxWidth: "500px" }}
       >
         <h4 className="text-center mb-4">Loan Application</h4>
+        <button className="btn btn-outline-danger" onClick={handleLogout}>
+          Logout
+        </button>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Loan Amount</label>
