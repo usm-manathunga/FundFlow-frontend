@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FundFlow Frontend – Microfinance Portal (Next.js + React)
 
-## Getting Started
+This is the frontend application for **FundFlow**, a microfinance loan and credit scoring platform. Built with **Next.js**, **React**, and **Bootstrap 5**, it provides interfaces for both **admins** and **customers** to manage loans, apply for credit, and track application statuses.
 
-First, run the development server:
+---
+
+## Tech Stack
+
+| Technology    | Role                            |
+|---------------|----------------------------------|
+| Next.js       | React framework for frontend     |
+| React         | UI library                       |
+| Bootstrap 5   | Responsive styling               |
+| Axios         | API communication with backend   |
+| SweetAlert2   | User-friendly alerts & feedback  |
+
+---
+
+
+
+### ✅ Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+### ▶️ Run the app locally
 
 ```bash
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🖥Pages & Routes
 
-## Learn More
+Login	/login	Login as admin/user
+Admin Dashboard	/admin	View all customers and loans
+Add Customer	/addCustomers	Create a new customer
+Edit/Delete Customer	/showAllCustomers	Manage customers
+Apply for Loan	/loan/apply	Submit loan application (user only)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧠 Assumptions
+User role is determined by backend and stored in frontend localStorage
 
-## Deploy on Vercel
+No JWT used;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Login Page
+![image](https://github.com/user-attachments/assets/fa50e458-b987-4b7f-835f-819c8bb57ec2)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Admin dashboard
+![image](https://github.com/user-attachments/assets/6657c9ff-e2cf-486b-9778-6def5ac6a2ae)
+
+Add customer UI
+![image](https://github.com/user-attachments/assets/a8c707a8-0b98-4c1b-b690-fa2a78093a34)
+
+Edit and delete a customer
+
+![image](https://github.com/user-attachments/assets/e85e55c6-ee15-4f36-a16f-97ce72dffb9e)
+
+Customer load add UI
+![image](https://github.com/user-attachments/assets/0761b5c9-0e50-4db1-97c8-3e13ef92e320)
+
+
+
+
+
